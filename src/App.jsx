@@ -1,7 +1,7 @@
+import { ToDoProvider } from './context/ToDoContext';
 import AddToDo from './components/AddToDo';
 import FilterComponent from './components/FilterComponent';
 import ToDoList from './components/ToDoList';
-import { ToDoProvider } from './context/ToDoContext';
 
 const App = () => {
   return (

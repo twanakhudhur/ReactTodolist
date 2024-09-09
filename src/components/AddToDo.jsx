@@ -2,13 +2,22 @@ import { useState } from 'react';
 import { useToDoContext } from '../context/ToDoContext';
 
 const AddToDo = () => {
-  const [newTodo, setNewTodo] = useState('');
-  const { setTodos } = useToDoContext();
+    const [newTodo, setNewTodo] = useState('');
+//   const { setTodos } = useToDoContext();
+
+//   const handleSubmit = e => {
+//     e.preventDefault();
+//     if (!newTodo) return;
+//     setTodos(prevTodos => [{ id: Date.now(), text: newTodo, completed: false }, ...prevTodos]);
+//     setNewTodo('');
+//   };
+
+  const { addTodo } = useToDoContext();
 
   const handleSubmit = e => {
     e.preventDefault();
     if (!newTodo) return;
-    setTodos(prevTodos => [{ id: Date.now(), text: newTodo, completed: false }, ...prevTodos]);
+    addTodo(newTodo);
     setNewTodo('');
   };
 
@@ -30,3 +39,4 @@ const AddToDo = () => {
 };
 
 export default AddToDo;
+
